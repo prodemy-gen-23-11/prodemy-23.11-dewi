@@ -17,7 +17,7 @@ h1{
 }
 
 .navbar{
-    display: flex;
+    /* display: flex; */
     align-items: center;
     padding: 20px;
     margin:0;
@@ -50,7 +50,7 @@ img.icon{
     padding:0 20px 0 20px ;
 }
 .container{
-    max-width: 1300px;
+    max-width: 1300px; 
     margin: auto;
     padding-left: 20px;
     padding-right: 20px;
@@ -182,7 +182,7 @@ a{
 a.ctg{
     color: #4e4949;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 018px;
+    font-size: 18px;
     box-sizing: border-box;
     float: left;
     text-align: center;
@@ -212,17 +212,7 @@ a.ctg:hover{
     line-height: 60px;
     position: relative;
 }
-.nm-produk::after{
-    content: '';
-    background:#ff523b;
-    width: 80px;
-    height: 5px;
-    border-radius: 5px;
-    position: relative;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%);
-}
+
 img.clts{
     width: 150px;
 }
@@ -244,3 +234,4 @@ h2{
 .soon-product{
   padding-left: 70px;
 }
+
