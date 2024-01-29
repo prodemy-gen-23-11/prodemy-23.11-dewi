@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.button{
+   @apply px-5 py-2 rounded-xl text-center w-56 m-5
+}
+.hoverText{
+    @apply hover:text-red-800
+}
+.btnHover{
+    @apply hover:w-60
+}
