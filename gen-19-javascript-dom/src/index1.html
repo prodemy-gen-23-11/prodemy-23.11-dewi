@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just Store |Product Details</title>
+    <link href="output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <h1 class="m-auto text-2xl uppercase text-center md:text-3xl max-sm:text-left px-28"><b>Just Store</b></h1> 
+           
+            <div class="mx-10 font-mono text-base md:text-xl lg:text-2xl">
+                <div class="flex justify-between">  
+                    <div class="group relative">
+                        <p class="md:hidden"><i class="fa-solid fa-bars"></i></p>
+                        <ul class= "max-md:hidden flex group-hover:block">
+                            <li class="px-5 hoverText"><a href="">Home</a></li>
+                            <li class="px-5 hoverText"><a href="">About</a></li>      
+                            <li class="px-5 hoverText"><a href="">Help</a></li> 
+                        </ul>
+                    </div>
+
+                    <div class="px-5">
+                        <span class="px-5 group relative">
+                            <button><i class="fa fa-search"></i><span class="hidden md:inline">Search</span></button>
+                            <span class="absolute hidden group-hover:block">
+                                <input type="text" placeholder="&nbsp;&nbsp;&nbsp;search">
+                            </span>
+                        </span>
+                        <a href="" class="px-3"><i class="fa fa-user"></i><span class="hidden md:inline">Account</span></a>
+                        <a href=""  class="px-5"><i class="fa fa-solid fa-cart-shopping"></i><span class="hidden md:inline">Cart</span></a>
+                    </div>     
+            </div>
+        </nav> 
+    </header>
+
+    <main>
+        <div>
+            <!-- Section1 -->
+            <div class="h-[800px] md:h-[550px] ">
+                <div class=" md:flex justify-center h-80 bg-slate-400">
+                    <!-- Sisi Kiri Layar -->
+                    <div class="w-1/2 gap-2 pt-5 mx-10">
+                        <div class="flex justify-center items-center">
+                            <img id="mainImg" class="h-72 md:h-96 " src="image/img1.webp" alt="thumbnail">
+                        </div>
+                        <!-- opsi gambar yang di click -->
+                        <div class=" flex justify-center gap-3 my-auto">
+                            <div class="imgOption hoverImg ">
+                                <img class="m-1 h-28" onclick="changeImg('image/img1.webp')" src="image/img1.webp" >
+                            </div>
+                            <div class="imgOption hoverImg">
+                                <img class="m-1 h-28" onclick="changeImg('image/img2.webp')" src="image/img2.webp" >
+                            </div>
+                            <div class="imgOption hoverImg">
+                                <img class="m-1 h-28" onclick="changeImg('image/img3.avif')" src="image/img3.avif" >
+                            </div>
+                            <div class="imgOption hoverImg">
+                                <img class="m-1 h-28" onclick="changeImg('image/img4.webp')" src="image/img4.webp" >
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- sisi kanan -->
+                    <div class=" md:w-1/2 pt-5 mx-10">
+                        <div class="h-[300px]">
+                            <h3 class="text-red-700 font-bold">Pre-Order (5 hari kerja)</h3>
+                            <h2 class="text-3xl md:text-4xl font-bold py-2">Rp 6,551,724</h2>
+                            <h1 class="text-2xl md:text-3xl font-mono py-3">Bride Denim Jacket, Custom Denim Jacket With Flowers, Hand Painted Personalized Jean Jacket</h1>
+                            <ul class="flex max-md:text-base">
+                                <li class="mx-3 text-black">32 Ratings</li>
+                                <li><i class="fa fa-star checked text-yellow-400"></i></li>
+                                <li><i class="fa fa-star checked text-yellow-400"></i></li>
+                                <li><i class="fa fa-star checked text-yellow-400"></i></li>
+                                <li><i class="fa fa-star checked text-yellow-400"></i></li>
+                                <li><i class="fa fa-star checked text-yellow-400"></i></li>
+                        </ul>
+
+                    </div> 
+                    <div class="m-5">
+                        <label class="font-mono text-base m-4 py-8" for="">Ukuran</label>
+                        <select class="border-gray-800">
+                            <option value="">XS</option>
+                            <option value="">S</option>
+                            <option value="">M</option>
+                            <option value="">L</option>
+                            <option value="">XL</option>
+                            <option value="">XXL</option>
+                        </select>
+                        <label class="font-mono text-base m-4 py-8" for="">Unit</label>
+                        <input type="number" class="" placeholder="Jumlah">
+                        </div>
+                        <div class="absolute uppercase text-2xl flex">
+                            <!-- button add to cart -->
+                            <div class="button bg-gray-400  hover:bg-gray-500 btnHover duration-500">
+                                <button >Add to cart</button>
+                            </div>
+                            <!-- button buy now -->
+                            <div class="button bg-neutral-500 hover:bg-neutral-600 btnHover duration-500">
+                                <button>Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>      
+               
+            </div>
+            <div class="m-10 h-48 overflow-y-scroll">
+                 <!-- Section2 -->
+                <h3 class="text-xl">Product Details</h3>
+                <p>
+                    Important! This listing is demonstration of the illustration I can paint on your custom jacket. This particular model of the jacket is not available anymore, however I can offer alternative models ex-stock. Please DM to choose the best one for you!
+                    <br>
+                    This clothing has 100% hand painted illustration(NOT printed) designed and created by me. High quality acrylic paint is used during production which is absolutely safe to wear. Performance of proper heat processing guarantees the illustration would not crack or peel off. The jacket is allowed for hand or machine washing with temperature of water not exceeding 30°C.
+                    <br>
+                    FAQ:
+                    "I have a short deadline and it does not meet your processing and/or shipping time. What should I do?"
+                    - Please contact me via Etsy conversation to agree the urgent production of your order along with express shipping to catch the deadline.
+                    <br>
+                    "Are the custom orders available? Can you paint another illustration? Can I choose another style, size or color of the jacket?"
+                    - Various models, styles, sizes and colors of the jackets to choose are available ex my numerous stock. This illustration is available for order, but please keep in mind I can paint any illustration you would like. Just let me know any idea you have in order to elaborate your perfect design together. It could be an image of any kind including reproduction, photo, abstraction or whatsoever. I will prepare the sketch for your preliminary review and approval in order to ensure you satisfy with all the details prior to painting commencement.
+                    <br>
+                    "Why should I choose your shop?"
+                    - I do believe with all my heart in what I create and put part of my soul into each work enable you to own not just the regular outfit, but piece of art. As one great artist once said: "If I could say it in words there would be no reason to paint".
+                    <br>
+                    More works, feedbacks and details on Instagram page: @aeternum_design
+                </p>
+            </div>  
+                           
+            <script src="main.js">
+            </script>
+            
+        </main>
+        <footer>
+            <div class="m-auto"> 
+                <div class="bg-gray-300 p-10 font-serif text-xl flex justify-center md:text-2xl">
+                    <div class="mx-10">
+                        <h2 class="font-serif">Follow Us</h2>
+                        <ul class="text-xl md:flex md:text-3xl">
+                            <li><a href=""><img src="" alt=""><i class="p-3 fa-brands fa-instagram"></i></a></li>
+                            <li><a href=""><i class="p-3 fa-brands fa-facebook"></i></a></li>
+                            <li><a href=""><i class="p-3 fa-brands fa-twitter"></i></a></li>
+                            <li><a href=""><i class="p-3 fa-brands fa-whatsapp"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="mx-10">
+                        <h2 class="font-serif pb-3">Shop</h2>
+                        <ul class="text-base">
+                            <li><a href="">Parfume</a></li>
+                            <li><a href="">Clothes</a></li>
+                            <li><a href="">Coat & Jacket</a></li>
+                            <li><a href="">Pants</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="mx-10">
+                        <h2 class="font-serif pb-3">Customers</h2>
+                        <ul class="text-base">
+                            <li><a href="">FAQ</a></li>
+                            <li><a href="">Account</a></li>
+                            <li><a href="">Get Help</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                    
+                
+            </div>
+        </div>
+    </footer>
+
+    </body>
+</html>
