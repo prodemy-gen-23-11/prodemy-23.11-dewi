@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Luas Bangun Datar</title>
+    <style>
+        .container{
+            margin: 5px;
+            padding: 5px;
+            height: 50px;
+            background: papayawhip;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .btn{
+            margin-left: 10px;
+            padding: 1px 5px;
+            width: 50px;
+            background: grey;
+            color: white;
+            border-radius: 7px;
+            border-color: gray;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="luas_persegi"></div>
+        <input type="number" id="sisi" placeholder="masukan sisi">
+        <button class="btn" onclick="luas_persegi()">Hasil</button>
+    </div>
+
+    <div class="container">
+        <div id="luas_persegi_panjang"></div>
+        <input type="number" id="panjang" placeholder="panjang" style="width: 75px;">
+        <input type="number" id="lebar" placeholder="lebar" style="width: 75px;">
+        <button class="btn" onclick="luas_persegi_panjang()">Hasil</button>
+    </div>
+    <div class="container">
+        <div id="luas_segitiga"></div>
+        <input type="number" id="alas" placeholder="alas" style="width: 75px;">
+        <input type="number" id="tinggi" placeholder="tinggi" style="width: 75px;">
+        <button class="btn" onclick="luas_segitiga()">Hasil</button>
+    </div>
+    
+    <div class="container">
+        <div id="luas_lingkaran"></div>
+        <input type="number" id="jari_jari" placeholder="jari-jari">
+        <button class="btn" onclick="luas_lingkaran()">Hasil</button>
+    </div>
+
+    <div class="container">
+        <div id="luas_trapesium"></div>
+        <input type="number" id="sisi_a" placeholder="sisi a" style="width: 70px;">
+        <input type="number" id="sisi_b" placeholder="sisi b" style="width: 70px;">
+        <input type="number" id="tinggi_1" placeholder="tinggi" style="width: 70px;">
+        <button class="btn" onclick="luas_trapesium()">Hasil</button>
+    </div>
+
+    <script src="main.js"></script>
+    
+</body>
+</html>
