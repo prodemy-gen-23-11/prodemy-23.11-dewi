@@ -594,10 +594,6 @@ video {
   margin: auto;
 }
 
-.m-5 {
-  margin: 1.25rem;
-}
-
 .mx-10 {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
@@ -607,16 +603,16 @@ video {
   margin-left: 0.75rem;
 }
 
-.block {
-  display: block;
-}
-
 .flex {
   display: flex;
 }
 
 .hidden {
   display: none;
+}
+
+.h-48 {
+  height: 12rem;
 }
 
 .h-72 {
@@ -629,18 +625,6 @@ video {
 
 .h-\[500px\] {
   height: 500px;
-}
-
-.h-48 {
-  height: 12rem;
-}
-
-.w-60 {
-  width: 15rem;
-}
-
-.w-72 {
-  width: 18rem;
 }
 
 .w-full {
@@ -670,9 +654,9 @@ video {
   background-color: rgb(74 222 128 / var(--tw-bg-opacity));
 }
 
-.bg-slate-300 {
+.bg-red-100 {
   --tw-bg-opacity: 1;
-  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+  background-color: rgb(254 226 226 / var(--tw-bg-opacity));
 }
 
 .bg-slate-400 {
@@ -680,25 +664,16 @@ video {
   background-color: rgb(148 163 184 / var(--tw-bg-opacity));
 }
 
-.bg-red-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 226 226 / var(--tw-bg-opacity));
-}
-
 .p-10 {
   padding: 2.5rem;
 }
 
-.p-3 {
-  padding: 0.75rem;
-}
-
-.p-5 {
-  padding: 1.25rem;
-}
-
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
 }
 
 .px-28 {
@@ -769,32 +744,14 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.text-yellow-400 {
-  --tw-text-opacity: 1;
-  color: rgb(250 204 21 / var(--tw-text-opacity));
-}
-
-.text-yellow-500 {
-  --tw-text-opacity: 1;
-  color: rgb(234 179 8 / var(--tw-text-opacity));
-}
-
-.text-yellow-600 {
-  --tw-text-opacity: 1;
-  color: rgb(202 138 4 / var(--tw-text-opacity));
-}
-
 .text-blue-950 {
   --tw-text-opacity: 1;
   color: rgb(23 37 84 / var(--tw-text-opacity));
 }
 
-.opacity-60 {
-  opacity: 0.6;
-}
-
-.opacity-75 {
-  opacity: 0.75;
+.text-yellow-400 {
+  --tw-text-opacity: 1;
+  color: rgb(250 204 21 / var(--tw-text-opacity));
 }
 
 .opacity-90 {
@@ -842,10 +799,6 @@ video {
 @media not all and (min-width: 768px) {
   .max-md\:hidden {
     display: none;
-  }
-
-  .max-md\:h-\[800px\] {
-    height: 800px;
   }
 
   .max-md\:p-5 {
@@ -900,12 +853,12 @@ video {
     display: none;
   }
 
-  .md\:h-80 {
-    height: 20rem;
+  .md\:h-72 {
+    height: 18rem;
   }
 
-  .md\:w-72 {
-    width: 18rem;
+  .md\:h-80 {
+    height: 20rem;
   }
 
   .md\:text-2xl {

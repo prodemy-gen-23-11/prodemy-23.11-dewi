@@ -1,0 +1,14 @@
+
+*{
+    background-color: aquamarine;
+}
+.parent{
+    font-size: 20px;
+    position: absolute;
+    display: none;
+}
+.child{
+    position: relative;
+    display: block;
+    font-size: 16px;
+}

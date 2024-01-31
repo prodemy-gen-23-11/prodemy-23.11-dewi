@@ -271,7 +271,7 @@ a.btn-add-to-cart:hover{
     transition: 1s;
  }
 /* For Phonecell */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) and (max-width: 992px) {
     header{
         font-size: 14px;
     }
@@ -318,7 +318,7 @@ a.btn-add-to-cart:hover{
     }
     .categories:hover .content-ctg{
         display: block;
-        transition: 1s;
+        transition-delay:  5s;
     }
     .headline{
         height: 400px;
@@ -348,5 +348,8 @@ a.btn-add-to-cart:hover{
     .row-1> img:hover{
         height: 260px;
     }
+  }
+  @media only screen and (max-width: 768px) {
+
   }
 
