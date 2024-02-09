@@ -1,12 +1,8 @@
 var teman = {
     nama   : "Udin",
     usia   : 16,
-//     sapa   : function(){
-//        return 'Ini ${nama}, usianya ${usia}';
-//     }
 }
-// console.log(data.sapa());
-
+console.log(teman);
 const readline = require('readline');
 
 const rl = readline.createInterface({
@@ -16,9 +12,9 @@ const rl = readline.createInterface({
 function updateData(){
     rl.question('Nama Baru: ', (nama) => {
         teman.nama = nama;
-        rl.question('Usia Berapa: ', (usia) =>{
-            teman.usia = usia;
-            console.log(teman);
+    rl.question('Usia Berapa: ', (usia) =>{
+        teman.usia = usia;
+        console.log(teman);
         });  
     })
 }

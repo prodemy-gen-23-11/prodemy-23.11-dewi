@@ -1,9 +1,9 @@
 import { useState } from 'react';
-
+import jacket from '../assets/Jacket';
 
 function ProductDetail(props) {
-   const {image} =props
-   
+   const {image} = props;
+
    const [mainImage, setMainImage] = useState(image);
 
    function changeMainImage(view) {

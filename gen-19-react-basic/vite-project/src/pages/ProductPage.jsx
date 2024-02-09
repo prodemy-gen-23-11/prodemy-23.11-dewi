@@ -6,7 +6,7 @@ import Section from '../component/Section';
 import AddToCart from '../component/AddToCart';
 import CategoryCard from '../component/CategoryCard';
 import {category} from '../assets/Category';
-import Headline from './Headline';
+import Headline from '../layout/Headline';
 
 function ProductPage() {
    return (
