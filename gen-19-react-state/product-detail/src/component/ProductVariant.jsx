@@ -1,25 +1,28 @@
 import { useState } from 'react';
 import jacket from '../assets/Jacket';
 
-function ProductVariant() {
-   const product = jacket[0];
+function ProductVariant(props) {
+   const {variants}=props;
 
-   const [variant, setVariant] = useState(product.variants[0]);
+   const [variant, setVariant] = useState(variants);
+   
    function changeVariant(size) {
       setVariant(size);
+      
    }
   
    return (
       <div>
-         <div className='text-base uppercase font-bold'>
+          <div className='text-base uppercase font-bold'>
             <h1>Size: </h1>
-            {product.variants.map((size) => (
+            {variants.map((size,index) => (
                <button 
                className={
                     size === variant
                         ? "btn-size-selected"
                         : "btn-size-option"
                 }
+                key={index}
                   onClick={() => {
                      changeVariant(size);
                   }}
@@ -27,6 +30,7 @@ function ProductVariant() {
                   {size}
                </button>
             ))}
+         
          </div>
       </div>
    );

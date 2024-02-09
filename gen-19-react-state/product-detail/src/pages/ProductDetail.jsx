@@ -4,15 +4,16 @@ import ProductVariant from '../component/ProductVariant';
 import jacket from '../assets/Jacket';
 import ProductList from '../component/ProductList';
 import Section from '../component/SectionTitle';
+import ImageView from '../component/coba/ImageView'
 
 function ProductDetail() {
-   const product = jacket[0];
+   const product = jacket[3];
    return (
       <div>
          <div className="m-0 h-[750px]">
             <div className="flex justify-between  bg-gray-400 md:h-[550px]">
                <div className="w-1/2 m-5">
-                  <ProductView />
+               <ProductView image={product.image}/>
                </div>
                <div className="w-1/2 m-5 pt-5">
                   <h3 className="text-red-700 font-bold text-xl">
@@ -29,27 +30,27 @@ function ProductDetail() {
 
                   <h3 className="title-artikel font-mono">{product.detail}</h3>
 
-                  <ul class="flex artikel">
+                  <ul className="flex artikel">
                      <li>
-                        <i class="fa fa-star checked text-yellow-400"></i>
+                        <i className="fa fa-star checked text-yellow-400"></i>
                      </li>
                      <li>
-                        <i class="fa fa-star checked text-yellow-400"></i>
+                        <i className="fa fa-star checked text-yellow-400"></i>
                      </li>
                      <li>
-                        <i class="fa fa-star checked text-yellow-400"></i>
+                        <i className="fa fa-star checked text-yellow-400"></i>
                      </li>
                      <li>
-                        <i class="fa fa-star checked text-yellow-400"></i>
+                        <i className="fa fa-star checked text-yellow-400"></i>
                      </li>
                      <li>
-                        <i class="fa fa-star checked text-yellow-400"></i>
+                        <i className="fa fa-star checked text-yellow-400"></i>
                      </li>
-                     <li class="mx-3 text-black">32 Ratings</li>
+                     <li className="mx-3 text-black">32 Ratings</li>
                   </ul>
 
                   <div className="my-5">
-                     <ProductVariant />
+                     <ProductVariant  variants={product.variants}/>
                   </div>
                   <div>
                      <QuantityProduct />
