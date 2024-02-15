@@ -15,7 +15,7 @@ function ProductVariant(props) {
       <div>
           <div className='text-base uppercase font-bold'>
             <h1>Size: </h1>
-            {variants.map((size,index) => (
+            {variants?.map((size,index) => (
                <button 
                className={
                     size === variant
