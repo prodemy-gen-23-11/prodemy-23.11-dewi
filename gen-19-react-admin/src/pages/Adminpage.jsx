@@ -11,9 +11,9 @@ export default function Adminpage() {
     `http://localhost:3000/products`,
     getProducts
   );
-  useEffect(() => {
-    getProducts();
-  }, []);
+  // useEffect(() => {
+  //   getProducts();
+  // }, []);
 
  
   return (
@@ -44,6 +44,9 @@ export default function Adminpage() {
               <th className="th-style">
                 <p className="text-style">Category_ID</p>
               </th>
+              <th className="th-style">
+                <p className="text-style"></p>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -66,8 +69,14 @@ export default function Adminpage() {
                   <td className="td-style capitalize">
                     <p className="text-style">{item.material}</p>
                   </td>
-                  <td className="td-style capitalize">
+                  <td className="td-style capitalize text-center">
                     <p className="text-style">{item.category_id}</p>
+                  </td>
+                  <td className="td-style" >
+                    <div className="flex justify-center gap-4">
+                    <button className="btn bg-green-400 hover:bg-green-500 ">Edit</button> <button className="btn bg-red-400 hover:bg-red-500 ">Delete</button>
+                    </div>
+                    
                   </td>
                 </tr>
               );
