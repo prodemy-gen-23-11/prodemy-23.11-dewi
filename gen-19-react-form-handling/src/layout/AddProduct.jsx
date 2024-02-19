@@ -7,31 +7,39 @@ import VarianInput from "../component/form/VarianInput";
 import CategoryInput from "../component/form/CategoryInput";
 import ImageByUrl from "../component/form/ImageByUrl";
 import ImageByFile from "../component/form/ImageByFile";
+import ImageFile from "../component/form/ImageFile";
 import PreviewByUrl from "../component/form/PreviewByUrl";
 import PreviewByFile from "../component/form/PreviewByFile";
+import TextInput from "../component/form/TextInput";
 
 export default function FormAddNew() {
   const [isImage, setIsImage] = useState(false);
   const [isPreview, setIsPreview] = useState(false);
+
 
   const schema = yup.object().shape({
     name: yup.string().required("is required"),
     price: yup.number().required(" is required"),
     description: yup.string().required("is required"),
     category: yup.string().oneOf(["1", "2", "3"]).required("select category"),
-    image: yup.string().required(" is required"),
+    image:isImage 
+    ? yup.string().required(" is required") 
+    : yup.mixed().test("required", "please select an image", (value) => {
+      return value && value.length;
+    })
   });
 
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
     reset,
     watch,
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmitForm = (data) => {
-    console.log(data.image);
+    console.log((data));
     // reset();
   };
 
@@ -46,15 +54,7 @@ export default function FormAddNew() {
           >
             <div className="grid grid-cols-2">
               <FormStyle.Body>
-                <label htmlFor="name" className="label-style">
-                  Name
-                </label>
-                <input
-                  placeholder="product name.."
-                  className="form-style"
-                  {...register("name")}
-                  id="name"
-                />
+              <TextInput placeholder="Product name..." name="name" id="name" label="Name" register={register} />
                 <p className="error">{errors.name?.message}</p>
               </FormStyle.Body>
 
@@ -64,31 +64,13 @@ export default function FormAddNew() {
               </FormStyle.Body>
             </div>
             <FormStyle.Body>
-              <label htmlFor="price" className="label-style">
-                Price
-              </label>
-              <input
-                type="number"
-                placeholder="product price..."
-                className="form-style"
-                {...register("price")}
-                id="price"
-              />
+              <TextInput placeholder="Product price..." name="price" id="price" label="Price" register={register} type="number"/>
               <p className="error">{errors.price?.message}</p>
             </FormStyle.Body>
 
             <div className="grid grid-cols-2">
               <FormStyle.Body>
-                <label htmlFor="material" className="label-style">
-                  Material
-                </label>
-                <input
-                  placeholder="material product..."
-                  className="form-style"
-                  {...register("material")}
-                  id="material"
-                />
-                {/* <TextInput label='Material' name='material' id='material' register={register}  /> */}
+              <TextInput placeholder="Product material..." name="material" id="material" label="Material" register={register} />
               </FormStyle.Body>
 
               <FormStyle.Body>
@@ -117,14 +99,17 @@ export default function FormAddNew() {
                 <input
                   type="checkbox"
                   className="rounded-xl mx-2"
-                  onClick={() => setIsImage(!isImage)}
+                  onChange={() => {
+                    setIsImage(!isImage) ;
+                    setValue("image","")
+                  }}
                 />
-                <p>by URL</p>
+                <p>by File</p>
               </div>
               {isImage ? (
-                <ImageByUrl register={register} />
-              ) : (
                 <ImageByFile register={register} />
+              ) : (
+                <ImageByUrl register={register} />
               )}
               <p className="error">{errors.image?.message}</p>
             </FormStyle.Body>
@@ -137,17 +122,20 @@ export default function FormAddNew() {
                 <input
                   type="checkbox"
                   className="rounded-xl mx-2"
-                  onClick={() => setIsPreview(!isPreview)}
+                  onChange={() => {
+                    setIsImage(!isPreview) ;
+                    setValue("preview","")
+                  }}
                 />{" "}
-                <p>by URL</p>
+                <p>by File</p>
               </div>
               {isPreview ? (
-                <PreviewByUrl
+                <PreviewByFile
                   register={register}
                   placeholder="preview url..."
                 />
               ) : (
-                <PreviewByFile register={register} />
+                <PreviewByUrl register={register} />
               )}
             </FormStyle.Body>
 
