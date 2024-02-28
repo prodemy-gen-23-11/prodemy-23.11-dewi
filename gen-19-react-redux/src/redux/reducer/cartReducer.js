@@ -10,20 +10,19 @@ const cartReducer = (state = intialState, action) => {
   switch (action.type) {
     case ADDTOCART:
       
-      const dataCart = state.cart.findIndex((i) => i.id === action.payload.id);
-      if (dataCart >= 0) {
-         // state.cart = state.cart.map(item=>item.id === action.payload.id && {...item, qty: qty + 1} )
-        // state.cart = state.cart.map(item=>item.id === action.payload.id && {...item, qty: item.qty.count + 1} )
-        state.cart[dataCart].qty.count += 1;
+    const { qty } = action.payload;
+    const dataCart = state.cart.findIndex((i) => i.id === action.payload.id);
+    if (dataCart >= 0) {
+      state.cart[dataCart].qty += qty;
         return {
           ...state,
         };
         
       } else {
-        let qty = { ...action.payload.qty, count: 1 };
+        const newData = { ...action.payload, qty: qty };
+        state.cart.push(newData)
         return {
           ...state,
-          cart: [...state.cart, { ...action.payload, qty }],
         };
       }
 
@@ -31,7 +30,7 @@ const cartReducer = (state = intialState, action) => {
             {
                 const dataCart = state.cart.findIndex(i => i.id === action.payload.id)
                 if (dataCart >= 0) {
-                    state.cart[dataCart].qty.count -= 1
+                    state.cart[dataCart].qty -= 1
                 }
                 return {
                     ...state
@@ -39,17 +38,12 @@ const cartReducer = (state = intialState, action) => {
             }
       case REMOVE:
           {
-              state.cart =  state.cart.filter(i => i.id === action.payload.id)     
+              state.cart =  state.cart.filter(i => i.id !== action.payload)     
               return {
                ...state
               }
           }
 
-          
-    // case INCREMENT:
-    //      return { ...state, count: state.count + 1 };
-    // case DECREMENT:
-    //      return { ...state, count: state.count - 1 };
     default:
       return state;
   }
