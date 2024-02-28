@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.navbar{
+     @apply px-3 hover:text-rose-800 hover:scale-105
+}
+.header{
+     @apply text-[40px] uppercase font-bold duration-300 drop-shadow-lg text-[#373434] tracking-widest 
+}
+.title-artikel{
+     @apply text-2xl py-3
+}
+
+.artikel{
+     @apply text-xl font-serif tracking-wide
+}
+.section-title{
+     @apply text-3xl text-center uppercase font-serif font-bold
+}
+.btn-card{
+     @apply m-5 p-5 text-xl px-5 py-3 rounded-3xl shadow-xl w-48 bg-yellow-400 duration-300 hover:bg-yellow-500 hover:shadow-md hover:scale-105 hover:translate-y-2 hover:duration-300 hover:shadow-rose-500
+}
+.img-view-option{
+     @apply w-32 h-32 overflow-hidden
+}
+.img-view-select{
+     @apply w-32 h-32 border border-2 p-2 border-slate-900 overflow-hidden
+}
+.btn-plus-min{
+     @apply py-0 px-3 border border-2 border-stone-700 rounded-md text-2xl font-bold 
+}
+.btn-size-selected {
+     @apply bg-slate-700 text-white border rounded-full w-10 h-10 my-2 text-xl m-2 font-bold;
+ }
+ .btn-size-option {
+     @apply border-2 border-slate-600 rounded-full w-10 h-10 my-2 hover:bg-slate-700 text-base m-2 font-bold ;
+ }
+ .th-style {
+     @apply p-4 border-b border-gray-500 bg-slate-100
+ }
+ .text-style{
+     @apply font-serif text-base leading-none text-gray-700 ;
+ }
+ .td-style {
+     @apply p-4 border-b border-gray-500 
+ }
+ .btn{
+     @apply rounded-lg bg-blue-600 p-2 mx-10 text-white self-center w-full text-lg uppercase hover:bg-blue-700 font-bold shadow-lg
+ }
+ .form-style{
+     @apply w-full rounded-lg border-[1px] border-gray-200 p-4 text-sm focus:outline-sky-200 
+ }
+ .label-style{
+     @apply text-gray-800 font-semibold capitalize text-lg p-1
+ }
+ .error{
+     @apply text-red-600 px-3
+ }
+ .search-bar{
+     @apply py-3 text-xl font-serif border border-2  w-full text-center
+ }
