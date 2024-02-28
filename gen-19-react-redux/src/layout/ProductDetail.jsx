@@ -10,39 +10,31 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { addToCart, removeOne } from "../redux/action/action";
 
-
 function ProductDetail() {
-  
   const { id } = useParams();
-  //const { cart } = useSelector(state => state.cartReducer)
-  const dispatch =useDispatch();
+  const dispatch = useDispatch();
 
-  const [ qty, setQty] =useState(1);
+  const [qty, setQty] = useState(1);
   const incrementQty = () => setQty(qty + 1);
   const decrementQty = () => {
-    if (qty > 1) 
-      setQty(qty - 1);
-    
+    if (qty > 1) setQty(qty - 1);
   };
-  // function addToCart(){
-  //   const productExist = items.find((item)=>item.id === id);
-  //   if (productExist){
-  //     setItems(items.map((item)=>item.id===id ? {...item, qty: item.qty + qty} : item))
-  //   }
-  //   else{
-  //     setItems([...items, {...products, qty: qty}])
-  //   }
-  // }
-
+  const handlerAddToCart = () => {
+    const payload = {
+      ...products,
+      qty,
+    };
+    dispatch(addToCart(payload));
+  };
 
   const getProducts = (url) => axios.get(url).then((response) => response.data);
   const { data: products, isLoading } = useSWR(
     `http://localhost:3000/products/${id}`,
     getProducts
   );
-  
+
   if (isLoading) return <div>Loading...</div>;
-  
+
   return (
     <div>
       <div className="m-0 h-[770px]">
@@ -51,7 +43,6 @@ function ProductDetail() {
             <ProductView image={products?.image} preview={products?.preview} />
           </div>
           <div className="w-1/2 m-5 pt-5">
-
             <div className="text-3xl md:text-4xl font-bold py-2">
               <h2 className="">{products?.price}</h2>
             </div>
@@ -82,32 +73,38 @@ function ProductDetail() {
             </ul>
 
             <div className="my-5">
-              <ProductVariant variants={products?.variants} />
+              <ProductVariant
+                variants={products?.variants}
+              />
             </div>
             <div>
-            <div className="p-1  flex justify-center w-[150px] rounded-md ">
-            <h3 className='text-xl py-2  px-4 font-bold'>Total</h3>
-            <button
-               className="btn-plus-min"
-               onClick={() => dispatch(removeOne({qty}))}
-            >  -  </button>
-            <p className="text-xl py-2  px-4 font-bold"> {qty} </p>
-            <button
-               className="btn-plus-min"
-               onClick={incrementQty}
-            > + </button>
-         </div>
+              <div className="p-1  flex justify-center w-[150px] rounded-md ">
+                <h3 className="text-xl py-2  px-4 font-bold">Total</h3>
+                <button
+                  className="btn-plus-min"
+                  onClick={decrementQty}
+                >
+                  {" "}
+                  -{" "}
+                </button>
+                <p className="text-xl py-2  px-4 font-bold"> {qty} </p>
+                <button className="btn-plus-min" onClick={incrementQty}>
+                  {" "}
+                  +{" "}
+                </button>
+              </div>
             </div>
             <div className="flex justify-start gap-8 py-5">
-            <div className="bg-blue-500 hover:bg-blue-600 w-40 text-center rounded-lg" onClick={() => dispatch(addToCart(products))}>
-               <Button>Add To Cart</Button>
+              <div
+                className="bg-blue-500 hover:bg-blue-600 w-40 regular-btn"
+                onClick={handlerAddToCart}
+              >
+                <Button>Add To Cart</Button>
+              </div>
+              <div className="bg-green-500 hover:bg-green-600  w-40 regular-btn">
+                <Button>Check Out </Button>
+              </div>
             </div>
-            <div className="bg-green-500 hover:bg-green-600  w-40 text-center rounded-lg">
-               <Button>Check Out </Button>
-            </div>
-            </div>
-           
-            
           </div>
         </div>
       </div>
