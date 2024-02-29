@@ -17,6 +17,12 @@ const cartSlice = createSlice({
         state.cart.push(newData)
       }
     },
+    incrementQty: (state, action) => {
+      const dataCart = state.cart.findIndex((i) => i.id === action.payload.id);
+      if (dataCart >= 0) {
+        state.cart[dataCart].qty += 1;
+      }
+    },
     removeOne: (state, action) => {
       const dataCart = state.cart.findIndex((i) => i.id === action.payload.id);
       if (dataCart >= 0) {
@@ -24,15 +30,11 @@ const cartSlice = createSlice({
       }
     },
     remove: (state, action) =>{
-   //   const idToRemove = action.payload;
      state.cart =  state.cart.filter(i => i.id !== action.payload) 
-    // const idToRemove = action.payload;
-  //    state.items = state.items.filter(item => item.id !== idToRemove);
-    
     }
   },
 });
 
-export const { addToCart, removeOne, remove } = cartSlice.actions;
+export const { addToCart, removeOne, remove, incrementQty } = cartSlice.actions;
 
 export default cartSlice.reducer;
