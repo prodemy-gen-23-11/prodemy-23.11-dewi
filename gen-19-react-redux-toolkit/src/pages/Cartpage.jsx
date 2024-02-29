@@ -1,12 +1,14 @@
 import { toRupiah } from "../utils/formatter";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, remove, removeOne } from "../redux/reducer/cartSlice";
+import { remove, decrementQty, incrementQty } from "../redux/reducer/cartSlice";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Cartpage() {
+
   const cart = useSelector((state) => state.cart.cart);
   const dispatch = useDispatch();
-
+  
   return (
     <div className="text-center ">
       <Link to={"/"}><h1 className="section-title m-5">Cart Page</h1></Link>
@@ -37,7 +39,7 @@ function Cartpage() {
                   onClick={
                     item.qty === 1
                       ? () => dispatch(remove(item.id))
-                      : () => dispatch(removeOne(item))
+                      : () => dispatch(decrementQty(item))
                   }
                 >
                   -
@@ -45,7 +47,7 @@ function Cartpage() {
                 <div className="">{item.qty}</div>
                 <button
                   className="bg-slate-200 py-2 px-4 rounded-lg"
-                  onClick={() => dispatch(addToCart(item))}
+                  onClick={ () => dispatch(incrementQty(item))}
                 >
                   +
                 </button>
