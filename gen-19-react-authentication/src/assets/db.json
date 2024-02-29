@@ -1,0 +1,119 @@
+{
+  "users": [
+    {
+      "email": "user@gmail.com",
+      "password": "$2a$10$tcaRnbBa4ugXygeOfO5BXegIouUsz4eLkf2NZQiaRsoJGVzTe6M5S",
+      "firstname": "User ",
+      "lastname": "Test",
+      "id": "CyxZiLL"
+    },
+    {
+      "email": "test@mail.com",
+      "password": "$2a$10$jaRhk1v2rrSlNXIQNQ4BnOaSLD2woPG4rhznLQqcyZw08hY6UP/fu",
+      "firstname": "User",
+      "lastname": "Test",
+      "id": "VrIz6Jk"
+    },
+    {
+      "email": "test2@mail.com",
+      "password": "$2a$10$VmVA4phuK8RTuS9.DSEV4.nFjQctRcUtURy8U0uUitpIVp8xs4Knm",
+      "firstname": "User",
+      "lastname": "Test",
+      "id": "TdBLKMG"
+    }
+  ],
+  "products": [
+    {
+      "name": "CUSTOMIZE DENIM",
+      "category_id": "2",
+      "price": 329000,
+      "material": "denim, jean, cotton, print",
+      "detail": "Plus Size Jacket, 0X Denim Jacket, 1X Big Size Fancy Jacket, 2X Women's Clothing, Black White Printed Jean, 3X, 4X Oversized Denim Coat",
+      "variants": [
+        "XXS",
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL"
+      ],
+      "image": "https://i.etsystatic.com/18683585/r/il/93029f/3825528361/il_794xN.3825528361_rveg.jpg",
+      "preview": [
+        "https://i.etsystatic.com/18683585/r/il/93029f/3825528361/il_794xN.3825528361_rveg.jpg",
+        "https://i.etsystatic.com/18683585/r/il/d18ec2/2766530822/il_794xN.2766530822_s6t8.jpg",
+        "https://i.etsystatic.com/18683585/r/il/da6116/2766530456/il_794xN.2766530456_67qc.jpg"
+      ],
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "category_id": "2",
+      "name": "COAT WOMAN",
+      "detail": "Beige trench coat for women, Beige relaxed trench coat with belt, Long cotton coat, Oversized vintage style trench coat for fall and spring",
+      "material": "Cotton, Viscose",
+      "price": 329000,
+      "variants": [
+        "XXS",
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL"
+      ],
+      "image": "https://i.etsystatic.com/24708299/r/il/092b41/4903964003/il_794xN.4903964003_3nql.jpg",
+      "preview": [
+        "https://i.etsystatic.com/24708299/r/il/092b41/4903964003/il_794xN.4903964003_3nql.jpg",
+        "https://i.etsystatic.com/24708299/r/il/9458ce/4903960773/il_794xN.4903960773_nvkv.jpg",
+        "https://i.etsystatic.com/24708299/r/il/1755f7/4855699700/il_794xN.4855699700_ap2m.jpg"
+      ]
+    },
+    {
+      "id": "3",
+      "category_id": "2",
+      "name": "LEATHER JACKET",
+      "detail": "90s Womens Vintage Oversized Jacket, ladies leather jacket, ladies biker jacket, ladies oversized leather jacket, Womens oversized jacket",
+      "material": "Sheepskin leather, Genuine lambskin leather, YKK Zipper",
+      "price": 499000,
+      "variants": [
+        "XXS",
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL"
+      ],
+      "image": "https://i.etsystatic.com/27480612/r/il/6a6319/5676076510/il_794xN.5676076510_jxoq.jpg",
+      "preview": [
+        "https://i.etsystatic.com/27480612/r/il/6a6319/5676076510/il_794xN.5676076510_jxoq.jpg",
+        "https://i.etsystatic.com/27480612/r/il/94f327/5724129535/il_794xN.5724129535_5num.jpg",
+        "https://i.etsystatic.com/27480612/r/il/2060f7/5676076508/il_794xN.5676076508_3tyr.jpg"
+      ]
+    },
+    {
+      "id": "5c70",
+      "name": "Floral Jacket",
+      "category_id": "2",
+      "price": 249000,
+      "material": "TNT",
+      "detail": "New Trending handmade suzani embroidery tnt jacket| women's clothing| gift for her",
+      "variants": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "image": "https://i.etsystatic.com/45174655/r/il/a02489/5398431419/il_794xN.5398431419_9ehl.jpg",
+      "preview": [
+        "https://i.etsystatic.com/45174655/r/il/a02489/5398431419/il_794xN.5398431419_9ehl.jpg",
+        "https://i.etsystatic.com/45174655/r/il/e12937/5112917358/il_794xN.5112917358_3d85.jpg",
+        "https://i.etsystatic.com/45174655/r/il/7df736/5112896694/il_794xN.5112896694_pims.jpg"
+      ]
+    }
+  ]
+}
