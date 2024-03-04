@@ -1,0 +1,2 @@
+Daftar Pertanyaan: 
+1. 644, Pengguna harus memiliki sumber daya untuk menulis sumber daya. Semua orang dapat membaca sumber dayanya. Maksudnya pengguna harus memiliki sumber daya untuk menulis tug gmna?
