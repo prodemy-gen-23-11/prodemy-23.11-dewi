@@ -1,7 +1,2 @@
-user1 : test1@mail.com
-pw : 123456
-user2 : test2@mail.com
-pw : 123456
-user3 : test3@mail.com
-pw : 123456
-
+Daftar Pertanyaan: 
+1. 644, Pengguna harus memiliki sumber daya untuk menulis sumber daya. Semua orang dapat membaca sumber dayanya. Maksudnya pengguna harus memiliki sumber daya untuk menulis tug gmna?

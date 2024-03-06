@@ -1,34 +1,20 @@
 {
   "users": [
     {
-      "email": "test1@mail.com",
-      "password": "$2a$10$deT6dpgyOXYeOC.uisrX9.4WebMB1AVth0Ebb6bPyFwFAAmRp7Bi.",
-      "firstname": "User1",
+      "email": "admin1@mail.com",
+      "password": "$2a$10$OCrp6TgbyjK2IJKcZPPoUOHkIqrWy9WY3wAT1diim5wR0lWkG.JNW",
+      "firstname": "Admin1",
       "lastname": "Test",
-      "Role": {
-        "role": "customer"
-      },
+      "Role": "Admin",
       "id": 1
     },
     {
-      "email": "test2@mail.com",
-      "password": "$2a$10$VeJ7G3LlkCkRDjDLjRssvOVT9485WMhuiceGeEKNZx/sjqFRraJ5O",
-      "firstname": "User2",
+      "email": "user1@mail.com",
+      "password": "$2a$10$9/1p5UR8JB..EUnR/tfNxel1QfgY/gP1VfP1NeBx114bs7JjXrnp2",
+      "firstname": "User1",
       "lastname": "Test",
-      "Role": {
-        "role": "customer"
-      },
+      "Role": "customer",
       "id": 2
-    },
-    {
-      "email": "test3@mail.com",
-      "password": "$2a$10$E41DCVQaQgVRN5awPN3uE.BRat2Ug/LSTA1ibI3d3uzKymaBYH4UW",
-      "firstname": "User3",
-      "lastname": "Test",
-      "Role": {
-        "role": "admin"
-      },
-      "id": 3
     }
   ],
   "products": [
@@ -127,108 +113,35 @@
   ],
   "carts": [
     {
-      "userId": 2,
-      "items": [
-        {
-          "id": "3",
-          "name": "LEATHER JACKET",
-          "image": "https://i.etsystatic.com/27480612/r/il/6a6319/5676076510/il_794xN.5676076510_jxoq.jpg",
-          "price": 499000,
-          "qty": 1
-        }
-      ],
-      "id": 1
+      "userId": 1,
+      "id": "2",
+      "name": "COAT WOMAN",
+      "image": "https://i.etsystatic.com/24708299/r/il/092b41/4903964003/il_794xN.4903964003_3nql.jpg",
+      "price": 329000,
+      "qty": 2
+    },
+    {
+      "userId": 1,
+      "id": "5c70",
+      "name": "Floral Jacket",
+      "image": "https://i.etsystatic.com/45174655/r/il/a02489/5398431419/il_794xN.5398431419_9ehl.jpg",
+      "price": 249000,
+      "qty": 5
     },
     {
       "userId": 2,
-      "items": [
-        {
-          "id": "3",
-          "name": "LEATHER JACKET",
-          "image": "https://i.etsystatic.com/27480612/r/il/6a6319/5676076510/il_794xN.5676076510_jxoq.jpg",
-          "price": 499000,
-          "qty": 1
-        }
-      ],
-      "id": 2
+      "id": "3",
+      "name": "LEATHER JACKET",
+      "image": "https://i.etsystatic.com/27480612/r/il/6a6319/5676076510/il_794xN.5676076510_jxoq.jpg",
+      "price": 499000,
+      "qty": 10
     },
     {
-      "userId": 2,
-      "items": [
-        {
-          "id": "5c70",
-          "name": "Floral Jacket",
-          "image": "https://i.etsystatic.com/45174655/r/il/a02489/5398431419/il_794xN.5398431419_9ehl.jpg",
-          "price": 249000,
-          "qty": 1
-        }
-      ],
-      "id": 3
-    },
-    {
-      "userId": 2,
-      "items": [
-        {
-          "id": "5c70",
-          "name": "Floral Jacket",
-          "image": "https://i.etsystatic.com/45174655/r/il/a02489/5398431419/il_794xN.5398431419_9ehl.jpg",
-          "price": 249000,
-          "qty": 1
-        }
-      ],
-      "id": 4
-    },
-    {
-      "userId": 2,
-      "items": [
-        {
-          "id": "5c70",
-          "name": "Floral Jacket",
-          "image": "https://i.etsystatic.com/45174655/r/il/a02489/5398431419/il_794xN.5398431419_9ehl.jpg",
-          "price": 249000,
-          "qty": 1
-        }
-      ],
-      "id": 5
-    },
-    {
-      "userId": 2,
-      "items": [
-        {
-          "id": "3",
-          "name": "LEATHER JACKET",
-          "image": "https://i.etsystatic.com/27480612/r/il/6a6319/5676076510/il_794xN.5676076510_jxoq.jpg",
-          "price": 499000,
-          "qty": 1
-        }
-      ],
-      "id": 6
-    },
-    {
-      "userId": 2,
-      "items": [
-        {
-          "id": "3",
-          "name": "LEATHER JACKET",
-          "image": "https://i.etsystatic.com/27480612/r/il/6a6319/5676076510/il_794xN.5676076510_jxoq.jpg",
-          "price": 499000,
-          "qty": 1
-        }
-      ],
-      "id": 7
-    },
-    {
-      "userId": 2,
-      "items": [
-        {
-          "id": "3",
-          "name": "LEATHER JACKET",
-          "image": "https://i.etsystatic.com/27480612/r/il/6a6319/5676076510/il_794xN.5676076510_jxoq.jpg",
-          "price": 499000,
-          "qty": 1
-        }
-      ],
-      "id": 8
+      "id": "1",
+      "name": "CUSTOMIZE DENIM",
+      "image": "https://i.etsystatic.com/18683585/r/il/93029f/3825528361/il_794xN.3825528361_rveg.jpg",
+      "price": 329000,
+      "qty": 3
     }
   ]
 }

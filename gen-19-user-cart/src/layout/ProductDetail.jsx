@@ -8,7 +8,7 @@ import { useState } from "react";
 import { addToCart, incrementCartItem } from "../redux/reducer/cartSlice";
 import { toRupiah } from "../utils/formatter";
 
-function ProductDetail() {
+function ProductDetail({userId}) {
 
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -25,15 +25,16 @@ function ProductDetail() {
   );
   const { items } = useSelector((state) => state.cart);
   const handlerAddToCart = (item) => {
-    const foundData = items.find((data) => data.id === item.id);
-    if (foundData) {
+    const index = items.find((data) => data.id === id && data.userId === userId) ;
+    if (index) {
       const payload = {
-        ...foundData,
-        qty: foundData.qty + qty,
+        ...index,
+        qty: index.qty + qty,
       };
       dispatch(incrementCartItem(payload));
     } else {
       const payload = {
+        userId: userId,
         id: item.id,
         name: item.name,
         image: item.image,

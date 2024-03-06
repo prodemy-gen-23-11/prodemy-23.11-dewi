@@ -1,12 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const fetchData = createAsyncThunk("data/fetchData", async (userId) => {
-  const response = await axios.get(`http://localhost:3000/carts`);
+export const fetchData = createAsyncThunk("data/fetchData", async () => {
+  const response = await axios.get("http://localhost:3000/carts");
   return response.data;
 });
 export const addToCart = createAsyncThunk("data/addToCart", async (payload) => {
-  const response = await axios.post('http://localhost:3000/carts/', payload);
+  const response = await axios.post("http://localhost:3000/carts", payload);
   return response.data;
 });
 export const incrementCartItem = createAsyncThunk(

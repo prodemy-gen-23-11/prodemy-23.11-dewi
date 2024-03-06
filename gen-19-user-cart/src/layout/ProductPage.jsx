@@ -18,7 +18,7 @@ function ProductPage() {
   
   const getProducts = (url) => axios.get(url).then((response) => response.data);
   const { data: products } = useSWR(
-    `http://localhost:3000/products`,
+    `http://localhost:3000/664/products`,
     getProducts
   );
 

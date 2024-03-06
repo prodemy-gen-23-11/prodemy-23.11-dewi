@@ -12,38 +12,33 @@ export default function Card(item) {
   const isLoggedIn = useSelector((state) => state.auth.token !== "");
   const dispatch = useDispatch();
   const [qty, setQty] = useState(1);
-  const items = useSelector((state) => state.cart.items);
-  const userId = useSelector(state =>state.auth.user.id)
- 
+  const { items } = useSelector((state) => state.cart);
+  const userId = useSelector(state=>state.auth.user.id)
+
   const handlerAddToCart = (item) => {
-    const foundData = items.find((data) => data.id === item.id);
-    const foundUser = items.find((user) => user.id === item.userId)
-    if (foundData && foundUser) {
-      
+    const index = items.find((data) => data.id === id && data.userId === userId) ;
+    if (index) {
       const payload = {
-        ...foundData,
-        qty: foundData.qty + qty,
+        ...index,
+        qty: index.qty + qty,
       };
       dispatch(incrementCartItem(payload));
-    } else {
+    } else  {
       const payload = {
-        userId,
-        dataCart:{
-          id: item.id,
-          name: item.name,
-          image: item.image,
-          price: item.price,
-          qty,
-        }
+        userId: userId,
+        id: item.id,
+        name: item.name,
+        image: item.image,
+        price: item.price,
+        qty,
       };
       dispatch(addToCart(payload));
     }
   };
-  console.log(userId)
   const onClickCard = (id) => {
     navigate(`/detail/${id}`);
   };
- 
+ console.log(userId)
   return (
     <div>
       <div

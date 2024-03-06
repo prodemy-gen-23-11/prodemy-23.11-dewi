@@ -1,45 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const fetchData = createAsyncThunk("data/fetchData", async (userId) => {
-  const response = await axios.get(`http://localhost:3000/carts/`);
-  return response.data;
-});
-export const addToCart = createAsyncThunk("data/addToCart", async ( payload) => {
- try{
-  const response = await axios.post(`http://localhost:3000/carts/`, payload);
-  return response.data;
- } catch (error) {
-  return rejectWithValue(error.response.data)}
-});
-export const incrementCartItem = createAsyncThunk(
-  "cart/incrementCartItem",
-  async (payload) => {
-    const response = await axios.put(
-      `http://localhost:3000/carts/${payload.id}`,
-      payload
-    );
-    return response.data;
-  }
-);
-export const decrementCartItem = createAsyncThunk(
-  "cart/decrementCartItem",
-  async (payload) => {
-    const response = await axios.put(
-      `http://localhost:3000/carts/${payload.id}`,
-      payload
-    );
-    return response.data;
-  }
-);
-export const removeData = createAsyncThunk("data/removeData", async (id) => {
-  await axios.delete(`http://localhost:3000/carts/${id}`);
-  return id;
-});
+
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    userId:'',
     items: [],
     status: "idle",
     error: null,
@@ -83,6 +48,37 @@ const cartSlice = createSlice({
       });
   },
 });
-
+export const fetchData = createAsyncThunk("data/fetchData", async (userId) => {
+  const response = await axios.get(`http://localhost:3000/carts?userId=${userId}`);
+  return response.data;
+});
+export const addToCart = createAsyncThunk("data/addToCart", async (payload) => {
+  const response = await axios.post(`http://localhost:3000/carts/`, payload);
+  return response.data;
+});
+export const incrementCartItem = createAsyncThunk(
+  "cart/incrementCartItem",
+  async (payload) => {
+    const response = await axios.put(
+      `http://localhost:3000/carts/${payload.id}`,
+      payload
+    );
+    return response.data;
+  }
+);
+export const decrementCartItem = createAsyncThunk(
+  "cart/decrementCartItem",
+  async (payload) => {
+    const response = await axios.put(
+      `http://localhost:3000/carts/${payload.id}`,
+      payload
+    );
+    return response.data;
+  }
+);
+export const removeData = createAsyncThunk("data/removeData", async (id) => {
+  await axios.delete(`http://localhost:3000/carts/${id}`);
+  return id;
+});
 
 export default cartSlice.reducer;
