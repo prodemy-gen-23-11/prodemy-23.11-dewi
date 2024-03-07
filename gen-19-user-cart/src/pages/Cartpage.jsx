@@ -9,15 +9,13 @@ import {
   incrementCartItem,
   removeData,
 } from "../redux/reducer/cartSlice";
-import axios from "axios";
-import useSWR from "swr";
+
 
 function Cartpage() {
   const [qty, setQty] = useState(1);
   const { items, status, error } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const userId = useSelector(state => state.auth.user.id)
-  console.log(userId)
   useEffect(() => {
     dispatch(fetchData(userId)); // Ambil data keranjang saat komponen dimuat
   }, [dispatch]);
@@ -39,6 +37,13 @@ function Cartpage() {
       qty: foundData.qty - 1,
     };
     dispatch(decrementCartItem(payload));
+  };
+  const getTotalItems = () => {
+    let total = 0;
+    items.forEach(item => {
+      total += item.qty;
+    });
+    return total;
   };
   const getTotalPrice = () => {
     let totalPrice = 0;
@@ -69,6 +74,7 @@ function Cartpage() {
           <div className="mx-5 px-5 ">
             {items?.map((item) => (
               <div
+                items={item}
                 key={item.id}
                 className="grid grid-cols-6 text-xl gap-10 items-center  border-b border-gray-500 rounded-lg"
               >
@@ -105,6 +111,9 @@ function Cartpage() {
             ))}
           </div>
         )}
+        <div total={getTotalItems()}>
+        Total Qty : {getTotalItems()}
+        </div>
         <div className="text-xl border-2 font-serif font-semibold text-end m-10">
         Total Price: {toRupiah(getTotalPrice())}
         </div>

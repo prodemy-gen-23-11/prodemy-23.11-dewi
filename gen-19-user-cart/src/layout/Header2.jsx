@@ -1,16 +1,8 @@
-
-import axios from "axios";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import useSWR from "swr";
-
 
 export default function Header2() {
-  const getProducts = (url) => axios.get(url).then((response) => response.data);
-  const { data: carts } = useSWR(
-    `http://localhost:3000/664/carts`,
-    getProducts
-  );
+
   const item = useSelector(state => state.cart.items);
   const getTotalItems = () => {
     let total = 0;
@@ -19,8 +11,6 @@ export default function Header2() {
     });
     return total;
   };
-//const cart = useSelector(state => state.cart.cart)
-
   return (
     <div className="flex justify-between m-4 mb-0">
       <div>
@@ -39,7 +29,6 @@ export default function Header2() {
                <span className='py-0 px-2 absolute top-[-12px] right-[-10px] bg-red-500 text-white rounded-full text-base' > {getTotalItems()}</span>
             </li>
                </Link>
-
           <li className="group flex py-2">
             <i class="fa fa-search p-2 "></i>
             <input

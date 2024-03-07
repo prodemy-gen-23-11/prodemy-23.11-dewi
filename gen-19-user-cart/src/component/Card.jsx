@@ -16,7 +16,7 @@ export default function Card(item) {
   const userId = useSelector(state=>state.auth.user.id)
 
   const handlerAddToCart = (item) => {
-    const index = items.find((data) => data.id === id && data.userId === userId) ;
+    const index = items.find((data) => data.productId === id && data.userId === userId) ;
     if (index) {
       const payload = {
         ...index,
@@ -26,7 +26,7 @@ export default function Card(item) {
     } else  {
       const payload = {
         userId: userId,
-        id: item.id,
+        productId: item.id,
         name: item.name,
         image: item.image,
         price: item.price,

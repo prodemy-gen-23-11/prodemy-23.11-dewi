@@ -1,9 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { resetAuthData } from "../redux/reducer/authSlice";
 import useSWR from "swr";
 import axios from "axios";
+import { fetchData } from "../redux/reducer/cartSlice";
 
 function Header() {
   const navigate = useNavigate();
@@ -16,6 +17,9 @@ function Header() {
     dispatch(resetAuthData());
     navigate("/");
   }
+  useEffect(() => {
+    dispatch(fetchData(user.id)); // Ambil data keranjang saat komponen dimuat
+  }, [dispatch]);
   const item = useSelector(state => state.cart.items);
   const getTotalItems = () => {
     let total = 0;
